@@ -34,23 +34,22 @@ const int WINDOW_HEIGHT = 600;
 
 int main(int argc, char* args[])
 {
-    int game_running=1;
+    SDL_bool game_running = SDL_TRUE;
     SDL_Event event;
 
     SDL_Init(SDL_INIT_VIDEO | SDL_RENDERER_PRESENTVSYNC);
-    TTF_Init();
     
     SDL_Window* window = SDL_CreateWindow("my game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
     if (!window)
     {
-        game_running = 0;
+        game_running = SDL_FALSE;
         printf("ERROR : SDL_CreateWindow");
     }
 
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     if (!renderer)
     {
-        game_running = 0;
+        game_running = SDL_FALSE;
         printf("ERROR : SDL_CreateRenderer");
     }
 
@@ -65,13 +64,14 @@ int main(int argc, char* args[])
         {
             switch (event.type)
             {
-            case SDL_QUIT: // Clic sur la croix
-                game_running = 0;
+            case SDL_QUIT: // Fermeture de la fenêtre
+                game_running = SDL_FALSE;
                 break;
             }
         }
 
         // Update
+        // ...
 
 
         // Draw
