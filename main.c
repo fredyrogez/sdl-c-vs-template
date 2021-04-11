@@ -1,6 +1,6 @@
 /*
-    SDL C VS Template
-    Copyright (c) 2019-2020 Fredy Rogez (rogez.net)
+    SDL C VS TEMPLATE
+    Copyright (c) 2019-2021 Fredy Rogez (https://rogez.games)
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -64,7 +64,7 @@ int main(int argc, char* args[])
         {
             switch (event.type)
             {
-            case SDL_QUIT: // Fermeture de la fenêtre
+            case SDL_QUIT: // Close window
                 game_running = SDL_FALSE;
                 break;
             }
@@ -79,7 +79,7 @@ int main(int argc, char* args[])
         SDL_RenderCopy(renderer, texture, NULL, NULL);
         SDL_RenderPresent(renderer);
 
-        SDL_Delay(1); // Permet de réduire la charge CPU
+        SDL_Delay(1); // reduce cpu usage
     }
         
     SDL_DestroyRenderer(renderer);
